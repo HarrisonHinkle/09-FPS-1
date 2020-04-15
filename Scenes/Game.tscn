@@ -26,17 +26,16 @@ panorama = ExtResource( 14 )
 [sub_resource type="Environment" id=2]
 background_mode = 2
 background_sky = SubResource( 1 )
-background_color = Color( 0.0745098, 0.0784314, 0.133333, 0.0705882 )
+background_color = Color( 0.913725, 0.917647, 0.941176, 0.0705882 )
 background_energy = 0.05
-ambient_light_color = Color( 0.0588235, 0.0666667, 0.458824, 1 )
-ambient_light_energy = 0.2
-ambient_light_sky_contribution = 0.5
+ambient_light_color = Color( 0.447059, 0.45098, 0.662745, 1 )
+ambient_light_energy = 1.81
+ambient_light_sky_contribution = 0.46
 fog_color = Color( 0.145098, 0.0784314, 0.207843, 1 )
 fog_sun_color = Color( 0.223529, 0.0941176, 0.321569, 1 )
 fog_sun_amount = 0.2
 fog_depth_begin = 3.0
 tonemap_mode = 3
-tonemap_white = 0.7
 
 [sub_resource type="PlaneMesh" id=3]
 size = Vector2( 200, 200 )
@@ -70,15 +69,15 @@ height = 0.5
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 0.2, 0.05, 0.2 )
 
-[sub_resource type="PlaneMesh" id=24]
+[sub_resource type="PlaneMesh" id=8]
 size = Vector2( 1, 1 )
 
-[sub_resource type="SpatialMaterial" id=25]
+[sub_resource type="SpatialMaterial" id=9]
 flags_transparent = true
 flags_unshaded = true
 albedo_color = Color( 1, 0, 0, 0 )
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=10]
 albedo_color = Color( 0.384314, 0.360784, 0.360784, 1 )
 emission_enabled = true
 emission = Color( 0.439216, 0, 0, 1 )
@@ -86,46 +85,46 @@ emission_energy = 0.8
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="SphereMesh" id=19]
+[sub_resource type="SphereMesh" id=11]
 radius = 0.005
 height = 0.01
 
-[sub_resource type="Curve" id=20]
+[sub_resource type="Curve" id=12]
 _data = [ Vector2( 0.0251256, 0.972973 ), 0.0, 0.0, 0, 0, Vector2( 0.984925, 0.0585586 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Gradient" id=21]
+[sub_resource type="Gradient" id=13]
 offsets = PoolRealArray( 0, 0.991429 )
 colors = PoolColorArray( 1, 1, 1, 1, 0, 0, 0, 1 )
 
-[sub_resource type="Curve" id=22]
+[sub_resource type="Curve" id=14]
 min_value = -1.0
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.954774, -0.981982 ), 0.0, 0.0, 0, 0, Vector2( 1, -1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="SpatialMaterial" id=23]
+[sub_resource type="SpatialMaterial" id=15]
 albedo_color = Color( 0.254902, 0.227451, 0.227451, 1 )
 
-[sub_resource type="BoxShape" id=15]
+[sub_resource type="BoxShape" id=16]
 extents = Vector3( 0.25, 0.25, 0.25 )
 
-[sub_resource type="SphereShape" id=26]
+[sub_resource type="SphereShape" id=17]
 
-[sub_resource type="BoxShape" id=17]
+[sub_resource type="BoxShape" id=18]
 extents = Vector3( 1.6, 1.8, 1.6 )
 
-[sub_resource type="GIProbeData" id=18]
+[sub_resource type="GIProbeData" id=19]
 bounds = AABB( -100, -100, -100, 200, 200, 200 )
 cell_size = 1.5625
 to_cell_xform = Transform( 0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 64, 64, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 128, 128, 1, 0, 0, 390115328, 1, 262144, 0, 0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_data = PoolIntArray( 0, 8, 128, 128, 128, 1, 0, 0, 819951680, 1, 817597248, 1, 429, 0, 1459003392, 1, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
 bias = 1.5
 normal_bias = 0.0
 propagation = 0.7
 
-[sub_resource type="StyleBoxFlat" id=27]
+[sub_resource type="StyleBoxFlat" id=20]
 bg_color = Color( 0.0901961, 0.141176, 0.415686, 1 )
 
-[sub_resource type="StyleBoxFlat" id=28]
+[sub_resource type="StyleBoxFlat" id=21]
 bg_color = Color( 0.0745098, 0.113725, 0.321569, 1 )
 
 [node name="Game" type="Spatial"]
@@ -164,8 +163,8 @@ current = true
 
 [node name="Life" type="MeshInstance" parent="Player/Pivot"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, -0.2 )
-mesh = SubResource( 24 )
-material/0 = SubResource( 25 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
 
 [node name="Shotgun" parent="Player/Pivot" instance=ExtResource( 2 )]
 transform = Transform( -4, 0, -1.55766e-06, 0, 4, 0, 1.55766e-06, 0, -4, 0.2, -0.3, -0.4 )
@@ -185,7 +184,7 @@ spot_angle = 25.0
 
 [node name="Flash" type="CPUParticles" parent="Player/Pivot"]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.194568, -0.271454, -0.554693 )
-material_override = SubResource( 8 )
+material_override = SubResource( 10 )
 cast_shadow = 0
 emitting = false
 amount = 30
@@ -193,7 +192,7 @@ lifetime = 0.25
 one_shot = true
 explosiveness = 0.5
 randomness = 0.5
-mesh = SubResource( 19 )
+mesh = SubResource( 11 )
 spread = 10.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 0.1
@@ -202,15 +201,15 @@ linear_accel = 3.0
 linear_accel_random = 0.5
 radial_accel = 1.0
 tangential_accel = 1.0
-scale_amount_curve = SubResource( 20 )
-color_ramp = SubResource( 21 )
+scale_amount_curve = SubResource( 12 )
+color_ramp = SubResource( 13 )
 hue_variation = 0.02
 hue_variation_random = 0.47
-hue_variation_curve = SubResource( 22 )
+hue_variation_curve = SubResource( 14 )
 
 [node name="Smoke" type="CPUParticles" parent="Player/Pivot"]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.194568, -0.271454, -0.554693 )
-material_override = SubResource( 23 )
+material_override = SubResource( 15 )
 cast_shadow = 0
 emitting = false
 amount = 100
@@ -218,7 +217,7 @@ lifetime = 0.4
 one_shot = true
 explosiveness = 0.1
 randomness = 0.5
-mesh = SubResource( 19 )
+mesh = SubResource( 11 )
 spread = 30.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 0.5
@@ -226,11 +225,11 @@ initial_velocity_random = 0.5
 linear_accel_random = 0.5
 radial_accel = 3.0
 radial_accel_random = 0.7
-scale_amount_curve = SubResource( 20 )
-color_ramp = SubResource( 21 )
+scale_amount_curve = SubResource( 12 )
+color_ramp = SubResource( 13 )
 hue_variation = 0.02
 hue_variation_random = 0.47
-hue_variation_curve = SubResource( 22 )
+hue_variation_curve = SubResource( 14 )
 
 [node name="Bullets" type="Spatial" parent="."]
 
@@ -241,7 +240,6 @@ script = ExtResource( 10 )
 one_shot = true
 
 [node name="Terrain" type="Spatial" parent="."]
-visible = false
 script = ExtResource( 15 )
 
 [node name="Cliffs" type="Spatial" parent="."]
@@ -266,9 +264,10 @@ script = ExtResource( 17 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Items/Crate"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0 )
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="crate" parent="Items/Crate" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5 )
 
 [node name="Key" type="RigidBody" parent="Items"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 1, 5 )
@@ -276,7 +275,7 @@ script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Items/Key"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0 )
-shape = SubResource( 26 )
+shape = SubResource( 17 )
 
 [node name="key" parent="Items/Key" instance=ExtResource( 7 )]
 
@@ -289,7 +288,7 @@ script = ExtResource( 9 )
 [node name="sphere_tank" parent="Enemies/Tank" instance=ExtResource( 8 )]
 
 [node name="CollisionShape" type="CollisionShape" parent="Enemies/Tank"]
-shape = SubResource( 17 )
+shape = SubResource( 18 )
 
 [node name="Scanner" type="RayCast" parent="Enemies/Tank"]
 enabled = true
@@ -317,8 +316,9 @@ light_energy = 3.0
 omni_range = 2.0
 
 [node name="GIProbe" type="GIProbe" parent="."]
-extents = Vector3( 100, 100, 100 )
-data = SubResource( 18 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0 )
+extents = Vector3( 120, 60, 120 )
+data = SubResource( 19 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.766045, 2.28299e-08, 0.642787, 0.31825, 0.86883, 0.379276, -0.558473, 0.49511, -0.665563, 48.3744, 38.691, -50 )
@@ -396,7 +396,7 @@ margin_right = 1020.0
 margin_bottom = 602.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/normal = SubResource( 27 )
+custom_styles/normal = SubResource( 20 )
 text = "You Lose"
 align = 1
 valign = 1
@@ -424,7 +424,7 @@ margin_right = 1020.0
 margin_bottom = 602.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/normal = SubResource( 27 )
+custom_styles/normal = SubResource( 20 )
 text = "You Win!"
 align = 1
 valign = 1
@@ -444,8 +444,10 @@ one_shot = true
 autostart = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HUD/Instructions"]
-margin_right = 1022.0
-margin_bottom = 599.0
+margin_left = -9.0
+margin_top = -9.0
+margin_right = 1033.0
+margin_bottom = 610.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -454,11 +456,11 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="HUD/Instructions/HBoxContainer"]
-margin_right = 1022.0
-margin_bottom = 599.0
+margin_right = 1042.0
+margin_bottom = 619.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/normal = SubResource( 28 )
+custom_styles/normal = SubResource( 21 )
 text = "Find the key
 Find the crate
 Shoot the tank

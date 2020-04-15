@@ -23,5 +23,8 @@ func _ready():
 				if display:
 					var t = Tree.instance()
 					t.translation = Vector3(x, 0, z)
-					t.scale = Vector3(2.5,2.5,2.5)
+					var r = randf()*6.28
+					t.rotate_y(r)
+					var s = 2 + randf()
+					t.scale = Vector3(s,s,s)
 					Terrain.add_child(t)

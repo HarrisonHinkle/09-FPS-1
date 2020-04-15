@@ -24,6 +24,5 @@ func _on_Bullet_body_entered(body):
 		body.queue_free()
 		queue_free()
 	if body.name == "Tank":
-		print(body.health)
 		body.take_damage(damage)
 		queue_free()

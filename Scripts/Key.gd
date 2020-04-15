@@ -8,7 +8,6 @@ func _ready():
 func _physics_process(delta):
 	var bodies = get_colliding_bodies()
 	for b in bodies:
-		print(b.name)
 		if b.name == "Player":
 			b.update_key()
 			queue_free()

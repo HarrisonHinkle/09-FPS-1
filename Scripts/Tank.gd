@@ -61,7 +61,6 @@ func _physics_process(delta):
 
 
 func _on_Timer_timeout():
-	print("timeout")
 	var c = Scan.get_collider()
 	if c != null and c.name == 'Player':
 		if state == "waiting":
