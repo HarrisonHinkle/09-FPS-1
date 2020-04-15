@@ -1,6 +1,7 @@
 extends KinematicBody
 
 onready var Camera = $Pivot/Camera
+onready var Flash = $Pivot/Particles
 var Bullet = preload("res://Scenes/Bullet.tscn")
 
 var velocity = Vector3()
@@ -56,6 +57,7 @@ func _unhandled_input(event):
 	if event.is_action_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		var b = Bullet.instance()
 		b.start($Pivot/Muzzle.global_transform)
+		Flash.emitting = true
 		get_node("/root/Game/Bullets").add_child(b)
 		
 

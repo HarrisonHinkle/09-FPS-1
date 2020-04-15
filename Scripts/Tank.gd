@@ -8,6 +8,7 @@ extends KinematicBody
 var state = ""
 var speed = 1
 onready var Scan = $Scanner
+onready var Indicator = $Indicator
 var Bullet = preload("res://Scenes/EnemyBullet.tscn")
 var health = 100
 
@@ -19,18 +20,12 @@ func take_damage(d):
 
 func change_state(s):
 	state = s
-	print(state)
-	var material = $sphere_tank/Sphere.mesh.surface_get_material(0)
-	if state == "scanning":
-		pass
-		#material.albedo_color = Color(0,1,0)
+	if state == "searching":
+		Indicator.light_color = Color(0,1,0)
 	if state == "found":
-		pass
-		#material.albedo_color = Color(1,1,0)
+		Indicator.light_color = Color(1,1,0)
 	if state == "shooting":
-		pass
-		#material.albedo_color = Color(1,0,0)
-	#$sphere_tank/Sphere.set_surface_material(0, material)
+		Indicator.light_color = Color(1,0,0)
 
 
 func _ready():
