@@ -28,7 +28,7 @@ func take_damage(d):
 		get_node("/root/Game/HUD/Time").visible = false
 		get_node("/root/Game/HUD/Timer").stop()
 	var m = $Pivot/Life.get_surface_material(0)
-	var v = (100.0 - float(health)) / 800.0
+	var v = (100.0 - float(health)) / 300.0
 	m.albedo_color = Color(0.8,0,0,v)
 	$Pivot/Life.set_surface_material(0, m)
 
