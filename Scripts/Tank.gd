@@ -8,15 +8,20 @@ extends KinematicBody
 var state = ""
 var speed = 1
 onready var Scan = $Scanner
+onready var L = $Scanner_l
+onready var R = $Scanner_r
 onready var Indicator = $Indicator
 var Bullet = preload("res://Scenes/EnemyBullet.tscn")
-var health = 100
+var health = 1000
 
 
 func take_damage(d):
 	health -= d
 	if health <= 0:
 		queue_free()
+		get_node("/root/Game/HUD/Win").visible = true
+		get_node("/root/Game/HUD/Time").visible = false
+		get_node("/root/Game/HUD/Timer").stop()
 
 func change_state(s):
 	state = s
@@ -37,6 +42,13 @@ func _physics_process(delta):
 		var c = Scan.get_collider()
 		if c != null and c.name == 'Player':
 			change_state("found")
+	else:
+		var l = L.get_collider()
+		if l != null and l.name == 'Player':
+			speed = 1
+		var r = R.get_collider()
+		if r != null and r.name == 'Player':
+			speed = -1
 	if state == "found":
 		change_state("waiting")
 		$Timer.start()

@@ -1,9 +1,9 @@
 extends Spatial
 
 func _ready():
-	get_node("/root/Global").update_score(0)
+	pass
 
 
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	if Input.is_action_pressed("quit"):
 		get_tree().quit()
